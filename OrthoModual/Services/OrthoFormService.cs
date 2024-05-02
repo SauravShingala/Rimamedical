@@ -1,6 +1,6 @@
-﻿using DataAccessLayer.SqlHandler;
-using OrthoModual.IServices;
+﻿using OrthoModual.IServices;
 using OrthoModual.Models;
+using OrthoModual.SqlHandler;
 using System.Data;
 
 namespace OrthoModual.Services

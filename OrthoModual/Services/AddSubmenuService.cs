@@ -1,9 +1,8 @@
-﻿using DataAccessLayer.SqlHandler;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OrthoModual.Models;
 using System.Data;
-using DataAccessLayer.SqlHandler;
 using OrthoModual.IServices;
+using OrthoModual.SqlHandler;
 
 namespace OrthoModual.Services
 {
