@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccsessLayer\DataAccsessLayer.csproj" />
+    <ProjectReference Include="..\DataAccsessLayer.csproj" />
   </ItemGroup>
 
 </Project>
