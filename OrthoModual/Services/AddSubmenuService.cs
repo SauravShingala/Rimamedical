@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using OrthoModual.Models;
 using System.Data;
-using DataAccessLayer.SqlHandler;
 using OrthoModual.IServices;
 
 namespace OrthoModual.Services
