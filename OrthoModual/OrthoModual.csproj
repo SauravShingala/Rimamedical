@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="https://github.com/SauravShingala/Rimamedical/tree/master/DataAccsessLayer" />
+    <ProjectReference Include="..\DataAccsessLayer\DataAccsessLayer.csproj" />
   </ItemGroup>
 
 </Project>
