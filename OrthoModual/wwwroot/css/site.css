@@ -1,0 +1,161 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.card-outline{
+    margin-top:10px !important;
+}
+.card-header {
+    background-color: #413B75;
+    color: white;
+}
+
+/*.second-header {
+    margin: 2rem;
+    background-color: #6c63b8;
+}
+
+.form-body {
+    margin: 2rem;
+}
+
+.main-header {
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1034;
+}
+
+select {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+}
+
+.main-sidebar {
+    margin-left:0;
+    width:11rem;
+    bottom:0;
+    float:none;
+    left:0;
+    position:fixed;
+    top:0;
+    height: 100vh;
+    z-index: 1038;
+}
+
+.sidebar-menu {
+   padding-left: 10% !important;
+   color:white;
+}
+
+.nav-list{
+    margin-top:3%;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: flex-start;
+}*/
+
+.btn-class {
+    background-color: #413B75;
+    color: white;
+}
+
+
+/*.info-box {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 80px;
+    padding: .5rem;
+    margin-bottom: 3px;
+    color: white;
+    background-color: #413B75;
+    border-radius:5px;
+}
+
+.info-box-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    line-height: 1.8;
+}
+
+.info-box-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+.active{
+    background-color: white;
+    color:black !important;
+
+    .a{
+        background-color: white;
+        color: black !important;
+    }
+}
+
+
+.btn:hover{
+    color:white;
+}
+
+.btn-primary:hover {
+    background-color: #413B75;
+    color:white;
+}*/
+
+
+.sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    font-family: fontAwesome;
+}
+
+    .sidebar-toggle:before {
+        content: "\f0c9";
+    }
+
+    .sidebar-toggle:hover {
+        color: #fff;
+    }
+
+    .sidebar-toggle:focus,
+    .sidebar-toggle:active {
+        background: transparent;
+    }
+
+    .sidebar-toggle.fa5 {
+        font-family: "Font Awesome\ 5 Free";
+        font-weight: 900;
+    }
+
+hr {
+    border-top: 1px solid white !important;
+}
+
+.dataTables_wrapper .dataTables_filter{
+    margin-bottom:8px !important;
+}

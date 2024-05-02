@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OrthoModual</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OrthoModual.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/skin.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+    <!-- Ensure jQuery is included first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Then include other libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo">
+              <!-- mini logo for sidebar mini 50x50 pixels -->
+              <!-- logo for regular state and mobile devices -->
+              <span class="logo-lg"><img src="/Images/Logo.png"/></span>
+              @* <img src="/Images/Logo.jpg" height="50"/> *@
+            </a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                  <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                     <li class="dropdown messages-menu">
+                         <a href="#" class="btn" style="margin-right:20px;" >Logout</a>
+                     </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                      <img src="~/Images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                      <p>Vikesh Bhuva</p>
+                      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <hr />
+                <ul class="sidebar-menu" data-widget="tree">
+                    @* <li class="header">MAIN NAVIGATION</li> *@
+                    <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Dashboard/Index") { <text>active</text>; } }">
+                        <a href="@Url.Action("Index", "Dashboard")">
+                            <i class="fa fa-th"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Ortho/Index") { <text>active</text>; } }">
+                        <a href="@Url.Action("Index", "Ortho")">
+                            <i class="fa fa-wheelchair"></i><span>Ortho</span>
+                        </a>
+                    </li>
+                    <li class="treeview @if (ViewContext.HttpContext.Request.Path.ToString().StartsWith("/Setting/")) { <text>active</text>; }">
+                        <a onclick="toggleTreeViewMenu(event)">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Settings</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddGenderTitle") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddGenderTitle", "Setting")">
+                                    <i class="fa fa-circle"></i> Gender Title
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddInjury") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddInjury", "Setting")">
+                                    <i class="fa fa-circle"></i> Injury
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddInitial") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddInitial", "Setting")">
+                                    <i class="fa fa-circle"></i> Initial
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddOngoingType") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddOngoingType", "Setting")">
+                                    <i class="fa fa-circle"></i> Ongoing
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddPhotoId") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddPhotoId", "Setting")">
+                                    <i class="fa fa-circle"></i> PhotoId
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddGaitType") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddGaitType", "Setting")">
+                                    <i class="fa fa-circle"></i> Gait
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddPosture") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddPosture", "Setting")">
+                                    <i class="fa fa-circle"></i> Posture
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddNoofSession") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddNoofSession", "Setting")">
+                                    <i class="fa fa-circle"></i> No of Session
+                                </a>
+                            </li>
+                            <li class="@{ if (ViewContext.HttpContext.Request.Path == "/Setting/AddRefferd") { <text>active</text>; } }">
+                                <a href="@Url.Action("AddRefferd", "Setting")">
+                                    <i class="fa fa-circle"></i> Refferd
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div>
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+            </div>
+            <strong>Copyright &copy; 2020-2025 <a href="#">Rima</a>.</strong> All rights reserved.
+        </footer>
+    </div>
+    
+            
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src=""></script>
+    @* <script src="~/lib/bootstrap/dist/js/jquery.dataTables.js" asp-append-version="true"></script> *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

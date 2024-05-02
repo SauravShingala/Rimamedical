@@ -1,0 +1,1144 @@
+﻿@model OrthoModual.Models.OrthoFormModel
+@{
+    ViewBag.Title = "Ortho Form";
+}
+
+<div class="content-wrapper" style="margin-left:0">
+    <form action="AddOrthoForm" method="post">
+        <div class="card card-outline">
+            <!-- Personal Details Start -->
+            <div class="card-header second-header">
+              <div ><b>Personal Details</b></div>
+            </div>
+          
+            <div class="card-body form-body">
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="" class="col-form-label">Client Ref #</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.clientRef, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Solicitor Ref #</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.solicitorRef, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Medco Ref #</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.medcoRef, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Examination Date</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.examinationDate, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Title</label>
+                      </div>
+                      <div class="col-7">
+                          @Html.DropDownList("persnolDetails.title", new SelectList(Model.titleKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                     </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Gender</label>
+                      </div>
+                      <div class="col-7">
+                          @Html.RadioButtonFor(m => m.persnolDetails.gender,"Male", new{style = "margin: 7px !important"}) Male
+                          @Html.RadioButtonFor(m => m.persnolDetails.gender,"Female", new{style = "margin: 7px !important"}) Female
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">First Name</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.firstName, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Last Name</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.lastName, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Middle Name</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.middleName, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Accompanied By</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.accompaniedBy, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-2">
+                        <label for="inputEmail3" class="col-form-label">Address</label>
+                      </div>
+                      <div class="col-9">
+                        @Html.TextBoxFor(m => m.persnolDetails.address, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Town</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.town, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Date Of Birth</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.dateOfBirth, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Country</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.country, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Occupation</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.occupation, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Post Code</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.postCode, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Accident Date</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.accidentdate, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Type Of Incident</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.typeOfIncident, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Type Of Occupancy</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.typeOfOccupency, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4"></div>
+                      <div class="col-8">
+                          @Html.RadioButtonFor(m => m.persnolDetails.isSeatBeltWearing,"Seatbelt", new{style = "margin: 7px !important"}) Seatbelt
+                          @Html.RadioButtonFor(m => m.persnolDetails.isSeatBeltWearing,"NA", new{style = "margin: 7px !important"}) NA
+                          @Html.RadioButtonFor(m => m.persnolDetails.isSeatBeltWearing,"Exemption", new{style = "margin: 7px !important"}) Exemption
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-11">
+                        @Html.TextBoxFor(m => m.persnolDetails.seatBeltDescription, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Third Party Vehicle</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.thirdPartyVehical, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Total # Of Occupant</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.totalOfOccupant, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-7">
+                        <label for="inputEmail3" class="col-form-label">Did Police attend scene of accident?</label>
+                      </div>
+                      <div class="col-3">
+                        @Html.RadioButtonFor(m => m.persnolDetails.isPoliceAttendScene,true, new{style = "margin: 7px !important"}) Yes
+                        @Html.RadioButtonFor(m => m.persnolDetails.isPoliceAttendScene,false, new{style = "margin: 7px !important"}) No
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-8">
+                        <label for="inputEmail3" class="col-form-label" >Was the vehical moving at the time of accident?</label>
+                      </div>
+                      <div class="col-3">
+                          @Html.RadioButtonFor(m => m.persnolDetails.isVehicalMoving,true, new{style = "margin: 7px !important"}) Yes
+                          @Html.RadioButtonFor(m => m.persnolDetails.isPoliceAttendScene,false, new{style = "margin: 7px !important"}) No
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-6"></div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Speed Of Vehicle</label>
+                      </div>
+                      <div class="col-7">
+                        @Html.TextBoxFor(m => m.persnolDetails.vehicalSpeed, new{ @class="form-control"})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mb-2">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-2">
+                        <label for="inputEmail3" class="col-form-label">Accident History</label>
+                      </div>
+                      <div class="col-9">
+                          @Html.TextAreaFor(m => m.persnolDetails.accidentHistory, new { @class="form-control"})
+                        @* <textarea class="form-control" aria-label="With textarea"></textarea> *@
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+            <!-- Personal Details End -->
+        
+            <!-- Treatment Received Start -->
+        <div class="card card-outline">
+            <div class="card-header second-header">
+              <div >
+                <b>Treatment Received (Relevant to this accident)</b>
+              </div>
+            </div>
+            <div class="card-body form-body">
+              <div class="row mb-2">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-4">
+                      <label for="inputEmail3" class="col-form-label">Did Ambulance attend scence of accident?</label>
+                    </div>
+                    <div class="col-7">
+                      @Html.RadioButtonFor(m => m.treatmentRecieved.isAmbulanceattend,true, new{style = "margin: 7px !important"}) Yes
+                      @Html.RadioButtonFor(m => m.treatmentRecieved.isAmbulanceattend,false, new{style = "margin: 7px !important"}) No
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row mb-2">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-4">
+                      <label for="inputEmail3" class="col-form-label">Did Ambulance take you to hospital?</label>
+                    </div>
+                    <div class="col-7">
+                      @Html.RadioButtonFor(m => m.treatmentRecieved.isAmbulanceTakeToHospitle,true, new{style = "margin: 7px !important"}) Yes
+                      @Html.RadioButtonFor(m => m.treatmentRecieved.isAmbulanceTakeToHospitle,false, new{style = "margin: 7px !important"}) No
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row mb-2">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-4">
+                      <label for="inputEmail3" class="col-form-label">Have you visited any</label>
+                    </div>
+                    <div class="col-4">
+                        @Html.RadioButtonFor(m => m.treatmentRecieved.visitedHospitleType,"Hospital", new{style = "margin: 7px !important"}) Hospital
+                        @Html.RadioButtonFor(m => m.treatmentRecieved.visitedHospitleType,"Walk in Center", new{style = "margin: 7px !important"}) Walk in Center
+                        @Html.RadioButtonFor(m => m.treatmentRecieved.visitedHospitleType,"Private Clinic", new{style = "margin: 7px !important"}) Private Clinic
+                    </div>
+                    <div class="col-4">
+                      <label for="inputEmail3" class="col-form-label">with regards to this accident?</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row mb-2">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-2">
+                      <label for="inputEmail3" class="col-form-label">When:</label>
+                    </div>
+                    <div class="col-9">
+                        @Html.TextBoxFor(m => m.treatmentRecieved.timeOfVisitedHospital, new{ @class="form-control"})
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="inputEmail3" class="col-form-label">Which Hospital</label>
+                    </div>
+                    <div class="col-8">
+                      @Html.TextBoxFor(m => m.treatmentRecieved.hospitalName, new{ @class="form-control"})
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p><b>Treatment Given:</b></p>
+              </div>
+              <div>
+                <div class="row mb-2">
+                  <div class="col-2">
+                    <label for="painkiller">Painkiller</label>
+                    @Html.TextBoxFor(m => m.treatmentGiven.isPainkiller)
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" id="painkiller" />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-2">
+                    <label for="advice">Advice</label>
+                    @Html.TextBoxFor(m => m.treatmentGiven.isAdvice)
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" id="advice" />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-2">
+                    <label for="recomendation">Recomendation</label>
+                    @Html.TextBoxFor(m => m.treatmentGiven.isRecomendation)
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" id="recomendation" />
+                  </div>
+                </div>
+        
+                <div class="row mb-4">
+                  <div class="col-12" style="text-align: center">
+                    <input type="button" class="btn  btn-class" style="margin: 5px" value="Add this visit" />
+                    <input type="button" class="btn  btn-class" style="margin: 5px" value="Add more visit" />
+                  </div>
+                </div>
+        
+                <div class="row mb-2" style="margin-top: 7%">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="inputEmail3" class="col-form-label">Have you visited your GP with regards to this Accident?</label>
+                      </div>
+                      <div class="col-7">
+                        <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                        <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-2">
+                        <label for="inputEmail3" class="col-form-label">When:</label>
+                      </div>
+                      <div class="col-9">
+                        <input type="email" class="form-control" id="inputEmail3" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p><b>Treatment Given:</b></p>
+                </div>
+                <div>
+                  <div class="row mb-2">
+                    <div class="col-2">
+                      <label for="painkiller">Painkiller</label>
+                      <input type="checkbox" style="margin-left: 1rem" id="painkiller" />
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="painkiller" />
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-2">
+                      <label for="advice">Advice</label>
+                      <input type="checkbox" style="margin-left: 1rem" id="advice" />
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="advice" />
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-2">
+                      <label for="recomendation">Recomendation</label>
+                      <input type="checkbox" style="margin-left: 1rem" id="recomendation" />
+                    </div>
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="recomendation" />
+                    </div>
+                  </div>
+        
+                  <div class="row mb-2">
+                    <div class="col-12" style="text-align: center">
+                      <input type="button" class="btn  btn-class" style="margin: 5px" value="Add this visit"
+                      />
+                      <input type="button" class="btn  btn-class" style="margin: 5px" value="Add more visit"
+                      />
+                    </div>
+                  </div>
+        
+                  <div class="row mb-2" style="margin-top: 7%">
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-9">
+                          <label for="inputEmail3" class="col-form-label">Have you recieved physiotherapy treatment?</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="radio"name="painkiller"  style="margin: 7px !important"/><label for="Yes">Yes</label>
+                          <input type="radio" name="painkiller" style="margin: 7px !important"/><label for="No">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-7">
+                      <div class="row">
+                        <div class="col-5">
+                          <label for="physiotherapy">If yes, Please provide no of session</label>
+                        </div>
+                        <div class="col-5">
+                          <input type="text" class="form-control" style="margin-left: 4%" name="Ambulance"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="row mb-2">
+                    <div class="col-6">
+                      <div class="row">
+                        <div class="col-8">
+                          <label for="inputEmail3" class="col-form-label">Have you been taking painkiller on your own?</label>
+                        </div>
+                        <div class="col-4">
+                          <input type="radio"name="painkiller"  style="margin: 7px !important"/><label for="Yes">Yes</label>
+                          <input type="radio" name="painkiller" style="margin: 7px !important"/><label for="No">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-3">
+                          <label for="inputEmail3" class="col-form-label">If yes, Please provide Detail</label>
+                        </div>
+                        <div class="col-8">
+                          <input type="text" class="form-control" name="painkiller"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <!-- Treatment Received  End -->
+        
+          <!-- Injuries Sustained Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Injuries Sustained</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+          <div class="row mb-2">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-1">
+                  <label>Injury</label>
+                </div>
+                  <div class="col-8">
+                    @Html.DropDownList("injuriesSustained.injury", new SelectList(Model.InjuryTypeKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-1">
+                    <label>Initial</label>
+                  </div>
+                  <div class="col-5">
+                      @Html.DropDownList("injuriesSustained.initial", new SelectList(Model.initialKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-1">
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-2">
+                          <input type="checkbox"><label style="margin-left: 2px;">Resolved?</label>
+                      </div>
+                      <div class="col-10">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-1">
+                    <label>Ongoing</label>
+                  </div>
+                  <div class="col-5">
+                    @Html.DropDownList("injuriesSustained.onGoing", new SelectList(Model.OngoingTypeKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-2">
+                    <label for="inputEmail3" class="col-form-label">Special note if any</label>
+                  </div>
+                  <div class="col-9">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12" style="text-align: center">
+                <input type="button" class="btn  btn-class" style="margin: 5px" value="Add injury Sustained"/>
+                <input type="button" class="btn  btn-class" style="margin: 5px" value="Clear" />
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Injuries Sustained End -->
+        
+        
+          <!-- Affects on Work Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Affects on Work(as a result of this accident)</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Did you take time off work?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">if yes, how long for?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" name="Ambulance" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Did you recive any sice note?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">if yes, how long for?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" name="Ambulance" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Change of job?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" name="Ambulance" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Are you back to work?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Add any special note?</label>
+                  </div>
+                  <div class="col-7">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Affects on Work Start -->
+        
+          <!-- Affects on Social/Leisure/Domestic Life Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Affects on Social/Leisure/Domestic Life(Phase if affected as a result of this accident)</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <input type="checkbox" style="margin-right: 1rem" id="painkiller">
+                    <label>Personal Hygiene</label>
+                  </div>
+                  <div class="col-4">
+                    <input type="checkbox" style="margin-right: 1rem" id="painkiller">
+                    <label>Cooking / Washing</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <input type="checkbox" style="margin-right: 1rem" id="painkiller">
+                    <label>Looking after children</label>
+                  </div>
+                  <div class="col-4">
+                    <input type="checkbox" style="margin-right: 1rem" id="painkiller">
+                    <label>Gardening</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-3">
+                    <input type="checkbox" style="margin-right: 1rem" id="painkiller">
+                    <label>Sport Activities</label>
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" id="painkiller">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-3">
+                    <label for="inputEmail3" class="col-form-label">Add any special note?</label>
+                  </div>
+                  <div class="col-8">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Affects on Social/Leisure/Domestic Life End -->
+        
+          <!-- Associated Phychological Symptoms Strat -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Associated Phychological Symptoms (as a result of this accident)</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Disturbed Sleep</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Travel Discomfort</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Travel Anxienty</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Lose Of Appetite</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Flashback</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Nightmares</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="na">NA</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="ongoing">Ongoing</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 6px !important"><label for="resolved">Resolved</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <input type="text" class=" form-control" id="disturbedsleep">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label>Status of above ongoing Symptoms?</label>
+                  </div>
+                  <div class="col-4">
+                    <input type="radio" id="disturbedsleep" style="margin: 7px !important"><label for="na">Improved</label>
+                    <input type="radio" id="disturbedsleep" style="margin: 7px !important"><label for="na">Not Improved</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-3">
+                    <label for="inputEmail3" class="col-form-label">Add any special note?</label>
+                  </div>
+                  <div class="col-8">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Associated Phychological Symptoms End -->
+        
+          <!-- Medical History Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Medical History</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="inputEmail3" class="col-form-label">Have you had any accident in past?</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-11">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="inputEmail3" class="col-form-label">Do you have any previous medical history relevant to this accident?</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="Yes">Yes</label>
+                    <input type="radio" name="Ambulance" style="margin: 7px !important"/><label for="No">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-11">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Medical History End -->
+        
+          <!-- Examination Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Examination</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-4">
+                    <label>Photo Id:</label>
+                  </div>
+                  <div class="col-6">
+                    @Html.DropDownList("examination.photoId", new SelectList(Model.PhotoIdKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-4">
+                    <label>Any Other Id:</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class=" form-control" id="disturbedsleep">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-8">
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-6">
+                    <input type="checkbox" name="Seatbelt" /><label>Time off work is justified in Medical expert opinion?</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-4">
+                    <label>Gait:</label>
+                  </div>
+                  <div class="col-6">
+                    @Html.DropDownList("examination.gaitId", new SelectList(Model.GaitTypeKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-4">
+                    <label>Posture:</label>
+                  </div>
+                  <div class="col-6">
+                    @Html.DropDownList("examination.postureId", new SelectList(Model.PostureKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-8">
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-6">
+                    <input type="radio" name="Seatbelt" style="margin: 7px !important"/><label>Left Handed</label>
+                    <input type="radio" name="Seatbelt" style="margin: 7px !important"/><label>Right Handed</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12" style="text-align: center">
+                <input type="button" class="btn  btn-class" style="margin: 5px" value="Refresh Exam List"/>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Examination End -->
+        
+          <!-- Recomendation Start -->
+        <div class="card card-outline">
+          <div class="card-header second-header">
+            <div ><b>Recomendation</b></div>
+          </div>
+        
+          <div class="card-body form-body">
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-3">
+                    <input type="checkbox">
+                    <label style="margin-left: 5px;">Physiotherapy?</label>
+                  </div>
+                  <div class="col-2"><label>No of Session:</label></div>
+                  <div class="col-4">
+                    @Html.DropDownList("recomendation.noOfSessionId", new SelectList(Model.NoOfSessionKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-3">
+                    <input type="checkbox">
+                    <label style="margin-left: 5px;">Refferd?</label>
+                  </div>
+                  <div class="col-3">
+                    @Html.DropDownList("recomendation.refferdId", new SelectList(Model.RefferdKeyValueModels, "KeyId", "KeyValue"), "Select Option", new { @class = "form-control", @placeholder = "Select Option" })
+                  
+                  </div>
+                  <div class="col-1"><input type="button" class="btn  btn-class" value="Add"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Recomendation End -->
+            <div class="row mb-4">
+              <div class="col-12" style="text-align: center">
+                <input type="submit" class="btn btn-class" style="margin: 5px;width: 8%;" value="Save"/>
+                <input type="button" class="btn btn-class" style="margin: 5px;width: 8%;" value="Print" />
+              </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

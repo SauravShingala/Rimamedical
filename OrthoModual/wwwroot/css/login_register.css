@@ -1,0 +1,39 @@
+.login-logo,
+.register-logo {
+    margin-bottom: .9rem;
+    font-size: 2.1rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.login-page,
+.register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e9ecef;
+}
+
+.login-box,
+.register-box {
+    width: 360px;
+}
+
+.login-box-msg,
+.register-box-msg {
+    padding: 0 20px 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.social-auth-links {
+    margin: 10px 0;
+}
+
+.login-card-body,
+.register-card-body {
+    padding: 20px;
+    border-top: 0;
+}

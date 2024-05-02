@@ -1,0 +1,96 @@
+﻿@model OrthoModual.Models.AddSubMenuModel
+
+
+@{
+    ViewBag.Title = "Setting";
+    Layout = "_Layout";
+    int id = 1;
+}
+
+<div class="content-wrapper" style="margin-left:0">
+    @* <section class="content-header">
+        <h1>Add Submenu</h1>
+    </section> *@
+
+    <div class="card card-outline">
+        <div class="card-header second-header">
+            <div><b>Add @ViewBag.Header</b></div>
+        </div>
+    
+            
+        <form action="@ViewBag.Action" method="post">
+            @Html.AntiForgeryToken()
+            <div class="card-body form-body">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="submenuName" class="col-form-label">@ViewBag.Header</label>
+                            </div>
+                            <div class="col-5">
+                                @Html.HiddenFor(m => m.KeyName)
+                                @Html.HiddenFor(m => m.getSubMenuModels)
+                                @Html.TextBoxFor(m => m.KeyValue, new  { @class = "form-control mt-2", @placeholder = "Enter Submenu Name" })
+                                @Html.ValidationMessageFor(m => m.KeyValue,"",new { @class = "text-danger"})
+                            </div>
+                            <div class="col-5" style="text-align: center">
+                                <button type="submit" class="btn btn-class" style="margin: 5px;width: 25%;">Save</button>
+                                <button type="reset" class="btn btn-class" style="margin: 5px;width: 25%;">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-6">
+                @if (ViewBag.Sucsess != null)
+                {
+                    <span class="text-success" style="margin:10px;" id="Message">@ViewBag.Sucsess</span>
+                }
+                @if (ViewBag.error != null)
+                {
+                    <span class="text-danger" id="Message">@ViewBag.error</span>
+                }
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <div class="box" style="margin-top: 3rem;">
+          <!-- /.box-header -->
+        <div class="box-body">
+            <table id="SubMenu" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model.getSubMenuModels.Count() > 0)
+                    {
+                        @foreach (var item in Model.getSubMenuModels)
+                        {
+                            <tr>
+                                <td class="col-2">@(id++)</td>
+                                <td class="col-10">@item.KeyValue</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+                <tfoot>
+                      <tr>
+                        <th>KeyName</th>
+                        <th>KeyValue</th>
+                      </tr>
+                </tfoot>
+            </table>
+        </div>
+          <!-- /.box-body -->
+    </div>
+</div>
+
+<script src="~/js/submenu.js"></script>
