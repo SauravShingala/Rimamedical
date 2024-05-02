@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.SqlHandler
+namespace OrthoModual.SqlHandler
 {
     /// <summary>
     /// This is a DataReader that 'fixes' any null values before

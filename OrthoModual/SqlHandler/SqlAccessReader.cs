@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DataAccessLayer.SqlHandler
+namespace OrthoModual.SqlHandler
 {
     public class SqlAccessReader<T>
     {
