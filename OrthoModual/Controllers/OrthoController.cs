@@ -14,9 +14,18 @@ namespace OrthoModual.Controllers
             this.orthoFormService = orthoFormService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
+            
         }
 
         [HttpGet]

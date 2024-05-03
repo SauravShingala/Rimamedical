@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Ortho";
+    Layout = "_Layout";
 }
 
 <div class="content-wrapper" style="margin-left:0">
@@ -13,7 +14,7 @@
                 <a class="btn btn-class" style="float: right;margin-right: 20px;" href="@Url.ActionLink("AddOrthoForm","Ortho")">Add New</a>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            @* <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -443,7 +444,7 @@
                 </tr>
                 </tfoot>
               </table>
-            </div>
+            </div> *@
             <!-- /.box-body -->
           </div>
 </div>
